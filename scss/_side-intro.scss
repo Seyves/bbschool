@@ -1,0 +1,17 @@
+.side-intro {
+	background-color: $backgroundLightColor;
+	color: $darkColor;
+	@include adaptiveValue("font-size", 18, 16);
+
+	&__container {
+		padding-top: rem(100);
+		padding-bottom: rem(100);
+	}
+
+	&__title {
+		@include adaptiveValue("font-size", 72, 50);
+		font-weight: 600;
+		text-align: center;
+		padding-bottom: em(20);
+	}
+}

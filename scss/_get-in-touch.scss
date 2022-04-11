@@ -1,0 +1,127 @@
+.get-in-touch {
+	background: linear-gradient(0deg, darken($backgroundDarkColor, 4%) 0,  $backgroundDarkColor 100%);
+
+	&__container {
+		padding-bottom: rem(70);
+	}
+
+	&__body {
+	}
+
+	&__title {
+		margin-bottom: em(20);
+	}
+
+	&__tip {
+		@include adaptiveValue("font-size", 24, 18);
+		text-align: center;
+		font-weight: 400;
+		margin-bottom: em(12);
+		font-weight: 600;
+	}
+
+	&__image-and-form{
+		max-width: rem(900);
+		margin: 0 auto;
+		display: flex;	
+		@include adaptiveValue("gap", 50, 30, 900, 768, 1);
+		align-items: center;
+	}
+
+	&__image {
+		position: relative;
+		@media (max-width:$mobile){
+			display: none; 
+		}
+		&::before{
+			position: absolute;
+			z-index: 1;
+			content: '';
+			display: block;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(0deg, rgba($backgroundDarkColor,1) 0%, rgba(#fff,0) 20%, rgba(#fff,0) 80%, rgba($backgroundDarkColor, 1) 100%,);
+		}
+		flex: 0 0 48%;
+		height: 100%;
+		overflow: hidden;
+		border-radius: 2px;
+		img{
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__form {
+	}
+}
+
+.get-in-touch-form {
+	flex: 0 1 auto;
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+
+	&__input{
+		flex: 1 1 45%;
+		width: 45%;
+		min-width: rem(170);
+
+		@include adaptiveValue("font-size", 16, 14, 900, 768, 1);
+		padding: em(5) em(20) 0;
+		font-weight: 400;
+		border: 1px solid rgba($secondaryColor, 0.7);
+		background: transparent;
+		height: em(55);
+		border-radius: 10px;
+		color: $mainColor;
+
+		transition: all 0.3s ease 0s;
+		&::placeholder{
+			color: $mainColor;
+			opacity: 0.5;
+		}
+
+		&:focus{
+			outline: none;
+			border: 1px solid rgba($secondaryColor, 1);
+		}
+		&:not(:placeholder-shown) {
+			border: 1px solid rgba($secondaryColor, 1);
+		}
+		 
+	}
+
+	&__first-name {
+	}
+
+	&__last-name {
+	}
+
+	&__email {
+	}
+
+	&__phone {
+	}
+
+	&__company {
+	}
+
+	&__title {
+	}
+
+	&__area {
+		flex: 1 1 100%;
+		width: 100%;
+		padding-top: em(15);
+		resize: none;
+		height: 150px;
+	}
+
+	&__button {
+		@include adaptiveValue("font-size", 18, 16, 900, 768, 1);
+		width: em(160);
+		height: em(50);
+		margin: 15px auto 0;
+	}
+}

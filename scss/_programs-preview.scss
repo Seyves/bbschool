@@ -1,0 +1,157 @@
+.programs {
+
+	background-color: $backgroundLightColor;
+	&__container {
+		padding-top: 50px;
+		padding-bottom: 70px;
+	}
+
+	&__body {
+	}
+
+	&__title {
+		color: $darkColor;
+		margin-bottom: 30px;
+		font-weight: 400;
+	}
+
+	&__cards {
+		display: flex;
+		@include adaptiveValue("gap", 40, 20);
+		flex-wrap: wrap;
+		justify-content: center;
+
+		.general-managment-card{
+			.card__image{
+				&::before{
+					background: rgba(#874200, 0.6);			
+				}
+			}		
+		}
+		
+		.leadership-card{
+			.card__image{
+				&::before{
+					background: rgba(#7d0000, 0.6);
+				}
+			}
+		}
+			
+		.digital-business-card{
+			.card__image{
+				&::before{
+					background: rgba(#00567d, 0.6);
+				}
+			}
+		}
+		
+		.marketing-card{
+			.card__image{
+				&::before{
+					background: rgba(#427a00, 0.6);
+				}
+			}
+		}
+	
+	}
+}
+
+.card{
+	a{
+		display: flex;
+		align-items: end;
+		width: 100%;
+		height: 100%;
+	}
+	position: relative;
+
+	border-radius: 5px;
+	overflow: hidden;
+	@include adaptiveValue("height", 300, 170);
+	flex: 1 1 rem(450);
+	max-width: rem(550);
+	
+	transition: all 0.2s ease 0s;
+
+	&__image{		
+		top: 0;
+		position: absolute;
+		width: 100%;
+		height: 100%;		
+		transition: all 0.8s ease 0s;
+	
+		&::before, &::after{
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;			
+		}
+	
+		&::before{		
+			opacity: 0.5;
+			z-index: 1;
+		}
+			
+		//текстура в виде кубов, отключена для оптимизации
+		/*
+		&::after{
+			content: '';
+			background-image: url('@img/cubes.png');
+			background-size: 50%;
+			background-repeat: repeat;			
+			opacity: 0.1;
+		}
+		*/
+	}	
+
+	&__info{
+		@include adaptiveValue("font-size", 52, 30);
+
+		padding-bottom: em(8);	
+		padding-left: em(8);	
+		padding-right: em(8);
+		position: relative;
+		z-index: 2;		
+
+		transition: all 0.4s ease 0s;
+	}
+
+	&__title {
+		font-weight: 600;
+		color: $mainColor;
+		margin-bottom: em(4);
+	}
+
+	&__button {
+		@include adaptiveValue("font-size", 14, 11);
+		width: em(200);
+		height: em(50);
+
+		opacity: 1;
+	}
+
+	@media (hover:hover) {
+		&:hover{
+			box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.5)
+		}
+		&__info{
+			top: 70px;
+		}
+		&__button{
+			opacity: 0;
+		}
+	}
+}
+.card:hover{	
+	.card__image{
+		transform: scale(1.1);
+	}
+	.card__info{
+		top: 0;
+	}
+	.card__button{
+		opacity: 1;
+	}
+}

@@ -1,0 +1,40 @@
+.side-header {
+	position: relative;
+
+		height: rem(260);
+
+		&__img {
+			background-image: url('../img/bg.jpg');
+			height: 100%;
+			background-size: cover;	
+			background-position: bottom;
+		}
+
+		&__shirt {
+			width: 180px;
+			position: absolute;
+			bottom: rem(-100);
+			left: 50%;
+			transform: translate(-50%);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			img{
+				width: 100%;
+			}
+
+			&:before{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				content: '';
+				display: block;
+				image-rendering: -webkit-optimize-contrast;
+				background-image: url('../img/logo2.png');
+				background-size: 36%;
+				background-repeat: no-repeat;
+				background-position: center 45%;
+			}
+		}
+}

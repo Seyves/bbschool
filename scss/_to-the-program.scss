@@ -1,0 +1,31 @@
+.to-the-program {
+	background-color: $backgroundLightColor;
+
+	&__container {
+		max-width: 920px;
+		padding-top: em(70);			
+		padding-bottom: em(50);
+	}
+
+	&__body { 
+	}
+
+	&__text {			
+		color: $darkColor;
+		@include adaptiveValue("font-size", 24, 18);
+		font-size: rem(24);
+		text-align: center;
+		line-height: 1.55;
+		font-weight: 400;
+	}
+
+	&__button {
+		width: em(250);
+		height: em(60);
+
+		@include adaptiveValue("font-size", 18, 14);
+		margin: em(50) auto 0;
+
+		position: relative;
+	}
+}

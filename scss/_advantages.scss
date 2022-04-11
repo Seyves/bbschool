@@ -1,0 +1,99 @@
+.advantages {
+	
+	background-color: $backgroundDarkColor;
+
+	&__container {
+		padding-bottom: rem(80);
+	}
+
+	&__body {
+	}
+
+	&__title {
+		padding-top: em(30);
+		margin-bottom: em(15);
+	}
+
+	&__advantages {		
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 30px;
+	}
+
+	&__advantage {
+	}
+}
+
+.advantage {
+	display: flex;
+	align-items: center;
+	column-gap: 20px;	
+	row-gap: 10px;
+
+	&::before{		
+		@extend %ic;
+		content: "\e904";
+		display: block;
+		flex: 0 0 em(21.4);		
+		width: em(21.4);
+		border-radius: 50%;		
+		height: em(21.4);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@include adaptiveValue("font-size", 60, 45, $containerWidth, 760);
+		background-color: $backgroundLightColor;
+		color: $secondaryColor;		
+	}
+
+	&__text {
+		@include adaptiveValue("font-size", 20, 18);
+		padding-top: em(6);
+		line-height: 1.35;
+		color: $backgroundLightColor;
+		font-weight: 400;
+	}
+}
+
+@media (max-width: $mobile){
+	.advantages__advantages{ 
+		grid-template-columns: repeat(1, 1fr); 	
+		gap: 45px;	
+		justify-items: center;
+	}
+	.advantage{		
+		flex-direction: column;
+		&::before{
+			@include adaptiveValue("font-size", 60, 45, 760, 320);
+			flex: 0 0 em(21.4);
+		}
+		&__text{			
+			text-align: center;
+		}
+		max-width: 450px;
+	}
+}
+
+.advantage:nth-child(2){
+	&::before{
+		content: "\e901";
+	}
+}
+.advantage:nth-child(3){
+	&::before{
+		content: "\e909";
+	}
+}
+.advantage:nth-child(4){
+	&::before{
+		content: "\e908";
+	}
+}
+.advantage:nth-child(5){
+	&::before{
+		content: "\e901";
+	}
+}
+

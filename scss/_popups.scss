@@ -1,0 +1,133 @@
+.fx-popup {
+	
+	&__body {		
+		
+	}
+
+	&__content {
+		
+	}
+
+	&__title {
+		font-size: em(36);
+		font-weight: 600;
+		margin-bottom: em(8);
+	}
+
+	&__text {
+		line-height: 1.55;
+		font-size: em(16);
+		font-weight: 600;
+	}
+
+	&__x{		
+	}
+
+	&__list{
+		padding-left: em(20);
+	}
+
+	&__list, &__list-item{
+		list-style: disc;
+	}
+
+	&__list-item {
+		font-weight: 500;
+	}
+
+	&__form {
+		display: flex;
+		gap: em(20);
+		flex-wrap: wrap;
+	}
+
+	&__form-input, &__form-button{
+		border-radius: em(5);		
+		padding: em(12);
+		flex: 1 1 auto;
+	}
+
+
+	&__form-input {		
+		background-color: darken($mainColor, 10%);
+	}
+
+	&__form-button {
+		text-transform: none;
+		color: $mainColor;
+	}
+}
+
+.spe-popup {
+
+	&__body {
+	}
+
+	&__content {
+	}
+
+	&__title {
+		text-align: center;
+		font-size: em(36);
+		font-weight: 600;
+		margin-bottom: em(8);
+	}
+
+	&__text {
+		text-align: center;
+		line-height: 1.55;
+		font-size: em(16);
+		font-weight: 600;
+	}
+
+	&__form {
+		gap: em(20);
+		display: flex;
+		flex-direction: column;		
+	}
+
+	&__input{
+		width: 100%;
+		flex: 0 0 auto;
+		padding: em(16);
+		border-radius: em(6);		
+		border: 1px solid #c9c9c9;
+		resize: vertical;
+	}
+	&__button{
+		color: $mainColor;
+		padding: em(15);
+		text-transform: none;
+		margin-top: em(10);
+	}
+}
+
+.general-management{
+	.popup{
+		.button{
+			background-color: $secondaryColor;
+		}
+	}
+}
+.digital-business{
+	.popup{
+		.button{
+			background-color: $businessColor;
+		}
+	}
+}
+.leadership{
+	.popup{
+		.button{
+			background-color: $leadershipColor;
+		}
+	}
+}
+.marketing{
+	.popup{
+		.button{
+			background-color: $marketingColor;
+		}
+	}
+}
+

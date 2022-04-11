@@ -1,0 +1,340 @@
+.program-wrapper .page>div:first-child{
+	@media (max-width:$tablet){
+		margin-top: rem(50);
+	}
+}
+
+.program-intro {
+	min-height: rem(600);
+	position: relative;
+
+	&__logo-section {
+	}
+
+	&__bg{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		overflow: hidden;		
+		img{
+			object-position:top ;			
+		}
+		@media (max-width:$tablet){
+			&::before{
+				display: none;
+			}
+			position: relative;
+			img{
+				position: relative;
+				max-height: rem(450);
+			}
+		}
+		@media (min-width: 2100px) {
+			img{
+				object-position: 0 -100px;
+			}
+		}
+	}
+
+	&__container {
+		@include adaptiveValue("padding-bottom", 50, 30);
+		padding-top: rem(50);
+		@include adaptiveValue("padding-left", 50, 15);
+		@include adaptiveValue("padding-right", 50, 15);
+	}
+
+	&__body {
+		position: relative;
+		z-index: 2;
+		display: flex;
+		justify-content: space-between;
+		align-items: end;
+		gap: rem(50);
+	}
+
+	&__title {
+		margin-bottom: 0;
+		@include adaptiveValue("font-size", 73, 37);
+		font-weight: 600;
+		color: $mainColor;
+		@media (max-width:$tablet){
+			color: $darkColor;
+		}
+		@media (min-width:$tablet){
+			&:before,&:after{
+				display: none;
+			}
+		}
+	}
+
+	&__form {
+		z-index: 1;
+		flex: 1 1 em(430);
+		max-width: em(430);
+		display: flex;
+		flex-direction: column;
+		gap: em(10);
+		background-color: rgba($backgroundLightColor, 0.7);
+		@include adaptiveValue("padding", 30, 20);
+		border-radius: 10px;
+	}
+
+	@media (max-width:$tablet){
+		background-color: $backgroundLightColor;
+		&__container{			
+			padding-top: rem(30);
+		}		
+		&__body{
+			justify-content: center;
+		}
+		&__form{
+			flex-direction: row;
+			flex-wrap: wrap;
+			padding: 0;
+			max-width: rem(450);		
+			.program-intro-form__title{
+				flex: 0 0 100%;
+			}	
+			.program-intro-form__input, .program-intro-form__select{
+				flex: 1 1 200px;
+			}	
+			.program-intro-form__button{				
+				margin-top: em(5);
+			}	
+		}
+	}
+}
+
+.logo-section {
+	background-color: $backgroundLightColor;
+	display: none;
+	@media (max-width:$tablet){
+		display: block;
+	}
+
+	&__container {
+		@include adaptiveValue("padding-right", 40, 15);
+		@include adaptiveValue("padding-left", 40, 15);
+		padding-top: rem(30);
+		padding-bottom: rem(30);
+	}
+
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: rem(25);
+	}
+
+	&__logo {
+		flex: 0 0 20%;
+		img{		
+			width: 100%;
+			max-width: rem(115);
+		}
+	}
+}
+
+.program-intro-form {
+	@include adaptiveValue("font-size", 16, 14);
+	&__title {
+		@include adaptiveValue("font-size", 30, 24);
+		color: $darkColor;
+		line-height: 1.15;
+		font-weight: 600;
+	}
+
+	&__input{		
+		padding: em(3) em(20) 0;		
+		height: em(45);		
+		border-radius: 4px;		
+		background-color: $backgroundLightColor;
+	}
+
+	.select{
+		font-size: inherit;			
+		height: em(45);
+		border-radius: 4px;
+
+		&__option{
+			padding: em(15) em(20) em(12);
+			display: flex;
+			gap: em(10);
+			&:after{
+				width: em(20);
+				height: em(12);
+				position: relative;
+				bottom: em(2);
+			}
+		}
+
+		&__header{				
+			border-radius: 4px;
+			background-color: $backgroundLightColor;
+		}
+		&__body{			
+			border-radius: 4px;	
+			background-color: $backgroundLightColor;
+		}
+	}
+
+	/*
+	.phone-mask {
+		display: flex;
+		padding-top: 0;
+		padding-bottom: 0;
+		gap: em(10);
+		
+		&__country-code {		
+			flex: 0 0 em(32);		
+			height: auto;	
+		}
+	
+		&__input {
+			//из-за бага css
+			width: 100px;
+			padding: em(3) 0 0;
+			//
+			display: block;
+			flex: 1 1 auto;
+			background-color: $backgroundLightColor;
+			&:focus{
+				outline: none;
+			}
+		}
+	}
+	*/
+
+	.country-code-select{
+		&__icon{	right: 0; }
+		&__current{
+			.country-code-select__option{	padding: 0;	}
+		}
+		&__option{
+			display: flex;
+			justify-content: space-between;
+			&:after{
+				bottom: em(0);	
+			}
+		}
+		&__body{	width: em(370); }
+		&__icon{	height: 12%; }
+	}
+
+	.country-select{
+		&__option{ padding: em(12) em(20) em(9); }
+	}
+
+	&__button {
+		text-transform: capitalize;
+		margin-top: em(15);
+		height: em(55);
+		width: 60%;
+		font-weight: 400;
+		@include adaptiveValue("font-size", 18, 16);
+	}
+}
+
+//Цвета
+//========================================================================================================================================================
+.general-management{
+	.program-intro-form{
+		&__input{
+			border: 1px solid $managementColor;
+		}		
+		.select{
+			&__header:not(.country-code-select__header){
+				border: 1px solid $managementColor;
+			}
+			&__body{ 
+				&:not(.country-code-select__body){ border-top: none; }
+				border: 1px solid $managementColor;
+			}
+		}
+		&__button{
+			background-color: $managementColor;
+			box-shadow: 0px 3px 40px -10px rgba($managementColor, 0.5);
+			&:hover{
+				background-color: darken($managementColor, 10%);			 	
+				box-shadow: 0px em(6) 0px -1px rgba(darken($managementColor, 20%), 1);
+			}
+		}
+	}
+}
+
+.leadership{
+	.program-intro-form{
+		&__input{
+			border: 1px solid $leadershipColor;
+		}		
+		.select{
+			&__header:not(.country-code-select__header){
+				border: 1px solid $leadershipColor;
+			}
+			&__body{ 
+				&:not(.country-code-select__body){ border-top: none; }
+				border: 1px solid $leadershipColor;
+			}
+		}
+		&__button{
+			background-color: $leadershipColor;
+			box-shadow: 0px 3px 40px -10px rgba($leadershipColor, 0.5);
+			&:hover{
+				background-color: darken($leadershipColor, 10%);			 	
+				box-shadow: 0px em(6) 0px -1px rgba(darken($leadershipColor, 20%), 1);
+			}
+		}
+	}
+}
+
+.digital-business{
+	.program-intro-form{
+		&__input{
+			border: 1px solid $businessColor;
+		}		
+		.select{
+			&__header:not(.country-code-select__header){
+				border: 1px solid $businessColor;
+			}
+			&__body{ 
+				&:not(.country-code-select__body){ border-top: none; }
+				border: 1px solid $businessColor;
+			}
+		}
+		&__button{
+			background-color: $businessColor;
+			box-shadow: 0px 3px 40px -10px rgba($businessColor, 0.5);
+			&:hover{
+				background-color: darken($businessColor, 10%);			 	
+				box-shadow: 0px em(6) 0px -1px rgba(darken($businessColor, 20%), 1);
+			}
+		}
+	}
+}
+
+.marketing{
+	.program-intro-form{
+		&__input{
+			border: 1px solid $marketingColor;
+		}		
+		.select{
+			&__header:not(.country-code-select__header){
+				border: 1px solid $marketingColor;
+			}
+			&__body{ 
+				&:not(.country-code-select__body){ border-top: none; }
+				border: 1px solid $marketingColor;
+			}
+		}
+		&__button{
+			background-color: $marketingColor;
+			box-shadow: 0px 3px 40px -10px rgba($marketingColor, 0.5);
+			&:hover{
+				background-color: darken($marketingColor, 10%);			 	
+				box-shadow: 0px em(6) 0px -1px rgba(darken($marketingColor, 20%), 1);
+			}
+		}
+	}
+}

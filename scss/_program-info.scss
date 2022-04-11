@@ -1,0 +1,109 @@
+.program-info {
+	&__container {
+		padding: rem(30) rem(20) rem(20);
+	}
+
+	&__body {
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: 3.3%;
+		row-gap: rem(30);
+		justify-content: center;
+		margin: 0 auto 0 0;
+	}
+
+	&__info-block{
+
+	}
+}
+.program-info-block {	
+
+	&:not(:last-child){
+		border-right: 2px solid $mainColor;
+	}
+
+	@media (max-width:rem(886)){		
+		padding-bottom: rem(15);
+		&:not(:last-child){
+			border-right: none;
+		}
+		&:first-child{
+			border-right: 2px solid $mainColor;
+		}
+	}
+	@media (max-width:rem(556)){
+		&:not(:last-child){
+			border-right: none;
+			border-bottom: 2px solid $mainColor;
+		}
+	}
+
+	flex: 0 0 30%;	
+	min-width: em(200);
+	display: flex;
+	gap: em(20);
+	@include adaptiveValue("font-size", 25, 20, 1200, 800, 1);
+	line-height: 1.25;
+	font-weight: 600;
+	color: $mainColor;
+
+
+	&__icon {
+		font-size: em(32);
+		
+		&._icon-person-to-door{
+			font-size: em(30);
+			&:before{
+				transform: scale(0.85);
+			}
+		}
+
+	}
+
+	&__content{
+
+	}
+
+	&__title {
+		text-transform: uppercase;
+	}
+
+	&__subtitle {
+	}
+
+	&__link{
+		font-size: rem(15);
+		line-height: 1.55;
+		font-weight: 600;
+		display: block;	
+	}
+
+	a{ text-decoration: underline; }
+}
+
+//Цвета
+//========================================================================================================================================================
+
+.general-management{
+	.program-info{		
+		background-color: $managementColor;
+	}
+}
+
+.leadership{
+	.program-info{		
+		background-color: $leadershipColor;
+	}
+}
+
+.digital-business{
+	.program-info{		
+		background-color: $businessColor;
+	}
+}
+
+.marketing{
+	.program-info{		
+		background-color: $marketingColor;
+	}
+}

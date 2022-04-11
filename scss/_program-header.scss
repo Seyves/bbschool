@@ -1,0 +1,115 @@
+.program-header-section {
+	background-color: $backgroundLightColor;
+	color: $darkColor;
+	box-shadow: 10px 0px 40px -2px rgba($backgroundDarkColor, 0.1);
+
+	&__program-header {
+	}
+}
+
+.program-header {	
+	
+	box-shadow: 10px 10px 40px 2px rgba(245, 130, 32, 0.1);		
+	max-width: rem(250);
+	position: fixed;
+	height: 100%;
+	z-index: 4;
+
+	&__body {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		
+		position: relative;
+	}
+
+	&__burger-shell{		
+		padding: em(30) rem(6);
+		height: 100%;
+		width: 100%;
+		background-color: $backgroundLightColor;
+		z-index: 2;
+	}
+
+	&__burger{		
+		gap: em(7);	
+		&::before, &::after, & span{			
+			width: rem(40);
+			background-color: $darkColor;
+		}
+	}
+
+	&__menu {
+		overflow: auto;
+		background-color: $backgroundLightColor;
+		flex: 1 1 auto;
+		font-size: rem(18);
+		display: flex;
+		flex-direction: column;
+		row-gap: em(28);		
+		padding: em(20);
+		transition: transform 0.5s ease 0s;
+
+		transform: translate(0px);
+		
+		&[burgered]{
+			border-left: 1px solid lighten($darkColor,55%);
+			height: 100%;
+			width: rem(260);
+			position: absolute;
+			top: 0;
+			right: 0;
+
+			&.active{ transform: translate(100%); }
+		}
+	}
+
+	@media (max-width:$tablet){			
+		min-width: 100vw;
+		height: rem(50);
+
+		&__menu {
+			&[burgered]{	
+				border-left: none;
+				border-top: 1px solid lighten($darkColor,55%);
+				right: unset;
+				left: -260px;
+				top: 50px;
+				height: calc(100vh - 50px);
+
+				&.active{
+					transform: translate(100%);
+				}		
+			}
+		}
+		&__burger-shell{		
+			padding: em(20) em(20);
+			height: 100%;
+			width: 100%;
+			background-color: $backgroundLightColor;
+			z-index: 2;
+		}		
+	}
+}
+
+.program-header-menu {
+	&__title {
+		line-height: 1.35;
+		font-size: rem(30);
+		margin-right: auto;
+	}
+
+	&__link {
+		transition: color 0.2s ease 0s;
+		@media (any-hover: hover){
+			&:hover{	color: rgba($darkColor, 0.6);	}
+		}
+		&:last-child{
+			margin-top: auto;
+			color: darken($secondaryColor, 20%);
+		}
+	}
+}
+//Цвета для возращения на главную
+//========================================================================================================================================================

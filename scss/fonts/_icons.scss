@@ -1,0 +1,84 @@
+%ic {
+	font-family: "icons";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+[class*="_icon-"] {
+	&:before {
+		@extend %ic;
+		display: block;
+	}
+}
+
+._icon-email:before {
+	content: "\e910";
+ }
+ ._icon-facebook:before {
+	content: "\e911";
+ }
+ ._icon-instagram:before {
+	content: "\e902";
+ }
+ ._icon-youtube:before {
+	content: "\e90d";
+ }
+ ._icon-hand:before {
+	content: "\e901";
+ }
+ ._icon-line-graph:before {
+	content: "\e904";
+ }
+ ._icon-team:before {
+	content: "\e909";
+ }
+ ._icon-pie-chart:before {
+	content: "\e908";
+ }
+ ._icon-education:before {
+	content: "\e90f";
+ }
+ ._icon-fist:before {
+	content: "\e900";
+ }
+ ._icon-lamp:before {
+	content: "\e903";
+ }
+ ._icon-person-to-door:before {
+	content: "\e907";
+ }
+ ._icon-timer:before {
+	content: "\e90a";
+ }
+ ._icon-circle-dollar:before {
+	content: "\e90e";
+ }
+ ._icon-tv:before {
+	content: "\e90b";
+ }
+ ._icon-messages:before {
+	content: "\e905";
+ }
+ ._icon-file-contract:before {
+	content: "\e912";
+ }
+ ._icon-notebook:before {
+	content: "\e906";
+ }
+ ._icon-user-vneck-hair:before {
+	content: "\e90c";
+ }
+ ._icon-file-lines:before {
+	content: "\e913";
+ }
+ ._icon-back:before {
+	content: "\e914";
+ }
+ ._icon-bag:before {
+	content: "\e915";
+ }
+

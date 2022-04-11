@@ -1,0 +1,93 @@
+.news {
+	color: $newsColor;
+	&__container{
+		max-width: rem(770);
+		padding-top: rem(100);
+		padding-bottom: rem(100);
+	}
+
+	&__header {
+
+	}
+	&__main {
+	}
+}
+
+.news-header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	height: rem(58);
+	border-bottom: 1px solid rgba($newsColor,0.2);
+	background-color: #fff;
+	z-index: 2;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&__arrow {
+		transition: transform 0.3s ease 0s;
+		@media (any-hover: hover){
+			&:hover{ transform: scale(1.2) rotate(180deg); }
+		}
+		position: absolute;
+		height: 100px;
+		top: 0;
+		left: 0;
+		
+		@include adaptiveValue("font-size", 25, 20);
+		width: em(40);
+		height: 100%;
+		transform: rotate(180deg);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__title {
+		font-size: rem(14);
+		font-weight: 600;
+	}
+}
+
+.news-page {
+
+	&__title {
+		@include adaptiveValue("font-size", 36, 30, 780, 320, 1);
+		line-height: 1.23;
+		font-weight: 600;
+		margin-bottom: em(10);
+	}
+
+	&__image {
+		width: 100%;
+		@include adaptiveValue("height", 500, 250, 780, 320, 1);
+	}
+
+	&__date {
+		font-size: rem(10);
+    	color: rgba($newsColor, 0.5);
+		font-weight: 700;
+		letter-spacing: 1.5px;
+		margin-bottom: em(50);
+	}
+
+	&__text {
+		margin-top: em(25);
+		margin-bottom: em(35);
+		font-size: rem(20);
+		font-weight: 500;
+    	line-height: 1.55;
+		color: $newsColor;
+		a{
+			color: $secondaryColor;
+		}
+	}
+
+	&__author {
+		font-size: rem(14);
+	}
+}

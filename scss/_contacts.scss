@@ -1,0 +1,121 @@
+.contacts {
+	background-color: darken($mainColor, 7%);
+
+	&__container {
+		padding-top: rem(30);
+		padding-bottom: rem(50);
+	}
+
+	&__body {
+	}
+
+	&__title {
+		font-weight: 400;
+		color: $darkColor;
+	}
+
+	&__social-icons {
+		display: flex;
+		max-width: em(400);
+		justify-content: space-between;
+		margin: 0 auto;
+	}
+
+	&__addresses {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 40px;
+		justify-content: space-between;
+		max-width: 85%;
+		margin-top: rem(40);
+	}
+
+	&__address {
+	}
+}
+
+.social-icons {
+
+	&__icon {
+		@include adaptiveValue("font-size", 40, 35);
+		width: em(25);
+		height: em(25);
+		border-radius: 50%;
+		background-color: $backgroundLightColor;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: rgba($secondaryColor, 0.8);
+
+		transition: all 0.3s ease 0s;
+		@media (hover:hover){
+			&:hover{
+				color: lighten($darkColor, 60%);
+			}
+		}
+	}
+}
+//Цвета для иконок
+//========================================================================================================================================================
+.general-managment{
+	.social-icons__icon{
+		color: rgba($managementColor, 0.8);
+		@media (hover:hover){
+			&:hover{
+				color: lighten($darkColor, 60%);
+			}
+		}
+	}
+}
+.leadership{
+	.social-icons__icon{
+		color: rgba($leadershipColor, 0.8);
+		@media (hover:hover){
+			&:hover{
+				color: lighten($darkColor, 60%);
+			}
+		}
+	}
+}
+.digital-business{
+	.social-icons__icon{
+		color: rgba($businessColor, 0.8);
+		@media (hover:hover){
+			&:hover{
+				color: lighten($darkColor, 60%);
+			}
+		}
+	}
+}
+.marketing{
+	.social-icons__icon{
+		color: rgba($marketingColor, 0.8);
+		@media (hover:hover){
+			&:hover{
+				color: lighten($darkColor, 60%);
+			}
+		}
+	}
+}
+
+
+.address {
+
+	transition: all 0.3s ease 0s;
+	@media (hover:hover){
+		&:hover{
+			color: lighten($darkColor, 50%); 
+		}
+	}
+	
+	color: $darkColor;
+	&__title {
+		font-weight: 600;
+		@include adaptiveValue("font-size", 30, 20);
+		margin-bottom: em(10);
+	}
+
+	&__number {
+		@include adaptiveValue("font-size", 20, 18);
+	}
+}

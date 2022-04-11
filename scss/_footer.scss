@@ -1,0 +1,101 @@
+
+.footer {
+	background-color: $backgroundDarkColor;
+
+	&__container {
+		padding-top: rem(50);
+		padding-bottom: rem(50);
+	}
+	
+	&__body {
+		display: flex ;
+		//сделано из-за бага медиа-запросов в js, который по какой-то причине не хочет правильно работать без этой строчки
+		@media (max-width:1560px){
+			display: flex;
+		}
+		flex-wrap: wrap;
+		@include adaptiveValue("gap", 100, 50);
+	}
+
+	&__category {
+		&:nth-child(2){
+			@media (max-width:$mobile){
+				order: 3;
+			}
+		}
+	}
+}
+
+
+.footer-category{
+	&__title {
+		@include adaptiveValue("font-size", 20, 18);
+		font-weight: 600;
+		text-transform: uppercase;
+		margin-bottom: em(20);
+	}
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		gap: em(20);
+		list-style: none;
+	}
+
+	&__item {
+		a{			
+			color: $mainColor;
+			transition: all 0.2s ease 0s;
+			&:hover{
+				color: $secondaryColor;
+			}
+		}
+		@include adaptiveValue("font-size", 16, 15);
+	}
+}
+//Цвета для ссылок
+//========================================================================================================================================================
+.general-managment{
+	.footer-category__item{
+		a{
+			@media (hover:hover){
+				&:hover{
+					color: $managementColor;
+				}
+			}
+		}
+	}
+}
+.leadership{
+	.footer-category__item{
+		a{
+			@media (hover:hover){
+				&:hover{
+					color: $leadershipColor;
+				}
+			}
+		}
+	}
+}
+.digital-business{
+	.footer-category__item{
+		a{
+			@media (hover:hover){
+				&:hover{
+					color: $businessColor;
+				}
+			}
+		}
+	}
+}
+.marketing{
+	.footer-category__item{
+		a{
+			@media (hover:hover){
+				&:hover{
+					color: $marketingColor;
+				}
+			}
+		}
+	}
+}

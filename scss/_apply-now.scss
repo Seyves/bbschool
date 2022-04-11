@@ -1,0 +1,73 @@
+.apply-now {
+	position: relative;	
+	background-image: url('../img/bg.jpg');
+	background-position: top left;
+
+	&:not(body)::before{
+		background: linear-gradient(0deg, rgba(#fff, 0.8) 0%, rgba(#fff, 0.5) 100%)
+	}
+
+	&__container {
+		padding-top: rem(50);
+		padding-bottom: rem(30);
+	}
+
+	&__body {
+		position: relative;	
+		z-index: 1;
+		text-align: center;
+	}
+
+	&__button {
+		width: em(230);
+		height: em(60);
+		margin: 0 auto;
+	}
+
+	&__title {
+		margin-top: em(15);
+		color: $darkColor;
+		@include adaptiveValue("font-size", 20, 18);
+		line-height: 1.35;
+		font-weight: 600;
+	}
+
+	&__subtitle {
+		margin-top: em(7);
+		color: $darkColor;
+		font-size: rem(16);
+		line-height: 1.35;
+		font-weight: 600;
+		a{
+			color: $secondaryColor;
+			text-decoration: underline;
+		}
+	}
+}
+
+//Цвета
+//========================================================================================================================================================
+
+.general-management{
+	.apply-now__subtitle{		
+		a{ color: $managementColor; }
+	}
+}
+
+.leadership{
+	.apply-now__subtitle{		
+		a{ color: $leadershipColor; }
+	}
+}
+
+.digital-business{
+	.apply-now__subtitle{		
+		a{ color: $businessColor; }
+	}
+}
+
+.marketing{
+	.apply-now__subtitle{		
+		a{ color: $marketingColor; }
+	}
+}

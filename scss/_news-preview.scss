@@ -1,0 +1,43 @@
+.news-preview {
+	background-color: $backgroundLightColor;	
+
+	&__container {
+		padding-top: rem(40);
+		padding-bottom: rem(50);
+	}
+
+	&__body {
+	}
+
+	&__title {
+		font-weight: 400;
+		color: $darkColor;
+	}
+
+	&__slider{
+		touch-action: pan-y;
+		min-height: em(340);
+		padding: 20px;
+		margin: 0 -20px;
+	}
+
+	&__band {
+	}
+
+	&__preview {
+		background-color: darken($backgroundLightColor, 1%);
+		
+		@include adaptiveValue("font-size", 20, 16);
+		
+		border-radius: 10px;
+		overflow: hidden;
+	}
+
+	&__scrollbar{
+		div{
+			background-color: rgba($backgroundDarkColor, 0.8);
+			height: em(7);
+			margin-top: em(30);
+		}
+	}
+}

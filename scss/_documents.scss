@@ -1,0 +1,115 @@
+.documents {
+
+	background-color: $backgroundLightColor;
+
+	&__container {
+		@include adaptiveValue("padding-top", 50, 40);
+		@include adaptiveValue("padding-bottom", 40, 30);
+	}
+
+	&__body {
+	}
+
+	&__title {
+		margin-bottom: em(10);
+	}
+
+	&__content {
+		display: flex;		
+		align-items: center;
+		column-gap: rem(50);
+		row-gap: rem(30);
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	&__image {
+		position: relative;
+		flex: 1 1 rem(380);
+		img{
+			width: 100%;
+		}
+		max-width: rem(600);
+	}
+
+	&__points {		
+		flex: 1 1 rem(380);
+		display: flex;
+		flex-direction: column;
+		gap: rem(40);
+		
+	max-width: rem(500);
+	}
+
+	&__point {
+
+	}
+
+}
+
+.point-documents {
+	display: flex;
+	align-items: center;	
+	gap: em(10);
+	@include adaptiveValue("font-size", 45, 37);
+
+	&__icon{
+		border: 1px solid rgba($secondaryColor, 0.3);
+		flex: 0 0 em(30);
+		width: em(30);
+		height: em(30);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		color: rgba($secondaryColor, 0.6);
+		background-color: darken($backgroundLightColor, 3%);
+	}
+
+	&__title-and-subtitle {
+		color: $darkColor;
+	}
+
+	&__title {
+		margin-bottom: em(8);
+		font-size: em(9);
+		line-height: 1.15;
+		font-weight: 600;
+	}
+
+	&__subtitle {		
+		font-size: em(7);
+		line-height: 1.35;
+	}
+}
+
+//Цвета
+//========================================================================================================================================================
+
+.general-management{
+	.point-documents__icon{		
+		border: 1px solid rgba($managementColor, 0.3);
+		color: rgba($managementColor, 0.6);
+	}
+}
+
+.leadership{
+	.point-documents__icon{		
+		border: 1px solid rgba($leadershipColor, 0.3);
+		color: rgba($leadershipColor, 0.6);
+	}
+}
+
+.digital-business{
+	.point-documents__icon{		
+		border: 1px solid rgba($businessColor, 0.3);
+		color: rgba($businessColor, 0.6);
+	}
+}
+
+.marketing{
+	.point-documents__icon{		
+		border: 1px solid rgba($marketingColor, 0.3);
+		color: rgba($marketingColor, 0.6);
+	}
+}

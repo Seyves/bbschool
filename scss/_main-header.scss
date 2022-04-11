@@ -1,0 +1,74 @@
+.main-header {
+	background: linear-gradient(0deg, rgba($backgroundDarkColor, 0.8) 0%, rgba($backgroundDarkColor, 1) 100%);
+	@media (max-width:$mobile){
+		background: linear-gradient(0deg, rgba($backgroundDarkColor, 0.9) 0%, rgba($backgroundDarkColor, 1) 100%);
+	}
+	position: fixed;
+	z-index: 4;
+	width: 100%;
+
+	&__container {		
+		max-width: 1800px;
+	}
+
+	&__body{
+		height: 15vh;
+		max-height: em(150);
+		min-height: em(100);
+		padding: 10px 0;
+	
+		display: flex;	
+		gap: 40px;
+		align-items: center;
+		justify-content: space-between;
+	}
+	
+	&__logo {
+		max-height: 120px;
+		height: 100%;
+		img{			
+			height: 100%;
+		}
+	}	
+
+	&__menu {
+	}	
+}
+
+.main-header-menu {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	column-gap: rem(35);
+	row-gap: rem(10);
+
+	&__link {
+		@include adaptiveValue("font-size", 16, 14);
+		
+		transition: all 0.5s ease 0s;
+		&:not(.exited){ color: $mainColor; }
+		@media (any-hover: hover){				
+			&:hover{	color: $secondaryColor;}
+		}		
+
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	transition: left 0.5s ease 0s;
+	@media (max-width:$mobile){
+
+		background-color: rgba($backgroundDarkColor, 0.9);
+		padding: rem(40) rem(15);
+		align-items: center;
+		position: absolute;
+		left: 100%;
+		width: 100%;
+		@include adaptiveValue("column-gap", 200, 30, 768, 320);
+		row-gap: 30px;
+		
+		&.active{
+			left: 0;
+		}
+	}	
+}

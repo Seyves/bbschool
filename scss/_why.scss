@@ -1,0 +1,81 @@
+.why {
+	background-color: darken($mainColor, 10%);
+	&__container {
+		position: relative;
+		padding-top: rem(100);
+		padding-bottom: rem(50);
+	}
+
+	&__body {
+		display: flex;
+	}
+
+	&__content {
+		position: relative;
+		flex: 0 0 52%;
+		background-color: $backgroundLightColor;
+		color: $darkColor;
+		@include adaptiveValue("padding-top", 40, 20);
+		@include adaptiveValue("padding-bottom", 40, 20);		
+		@include adaptiveValue("padding-left", 60, 20);
+		@include adaptiveValue("padding-right", 60, 20);
+		z-index: 1;
+	}
+
+	&__title {
+		font-weight: 600;
+		position: relative;
+		margin-bottom: em(8);
+		@include adaptiveValue("font-size", 42, 30);
+	}
+
+	&__text {
+		@include adaptiveValue("font-size", 17, 16);
+    	line-height: 1.5;
+	}
+
+	&__image {		
+		bottom: rem(50);
+		right: rem(60);
+		flex: 0 0 53%;
+		img{
+			object-position: top;
+		}
+		@media (max-width:$tablet){
+			flex: 0 0 60%;
+		}
+	}
+
+	@media (max-width:$mobile){
+		&__container{
+			
+			padding-top: rem(360);
+		}
+
+		&__body{
+			display: block;
+		}
+
+		&__content {
+			max-width: rem(500);
+		}
+
+		&__image{
+			order: -1;
+			left: rem(-50);
+			position: absolute;
+			top: rem(-40);
+			width: rem(900);
+			height: rem(500);
+			transform: scale(0.7);
+			img{
+				
+				object-position: top;
+			}
+		}
+	}
+}
+.program-title {
+}
+.ibg {
+}

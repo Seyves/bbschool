@@ -1,0 +1,88 @@
+.modules {
+	background-color: $backgroundLightColor;
+
+	&__container {
+		padding-top: rem(60);		
+		padding-bottom: rem(30);
+	}
+
+	&__body {
+	}
+
+	&__title {
+	}
+
+	&__modules {
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(40);
+		justify-content: space-between;
+	}
+
+	&__module {
+	}
+}
+
+.module {
+	display: flex;
+	flex-direction: column;
+
+	line-height: 1.55;
+	padding: 0 em(20) em(30);
+	color: #000;
+	background-color: darken($mainColor, 10%);
+	flex: 1 1 em(260);
+	@include adaptiveValue("font-size", 20, 18);
+
+	&__title {
+		margin: 0 em(-18) em(30);
+		font-size: em(18);
+		color: $mainColor;
+		padding: em(15) em(18);
+		line-height: 1.35;
+		font-weight: 600;
+		height: em(46);
+		background-color: darken($secondaryColor, 7%);
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;		
+	}
+
+	&__subtitle {
+		font-weight: 600;
+	}
+
+	&__text {
+	}
+
+	&__duration {
+		margin-top: auto;
+	}
+}
+
+
+.general-management{
+	.module__title{		
+		background-color: $managementColor;
+	}
+}
+
+.leadership{
+	.module__title{		
+		background-color: $leadershipColor;
+	}
+}
+
+.digital-business{
+	.module__title{		
+		background-color: $businessColor;
+	}
+}
+
+.marketing{
+	.module__title{		
+		background-color: $marketingColor;
+	}
+}

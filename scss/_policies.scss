@@ -1,0 +1,29 @@
+.policies{
+	gap: em(40);
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.police {		
+	flex: 1 1 em(360);
+	padding: em(30);
+	background-color: darken($backgroundLightColor, 1%);
+	border-radius: em(6);
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 3px 0px;
+	
+	line-height: 1.55;
+
+	transition: all 0.2s;
+
+	&__title {
+		font-weight: 600;
+	}
+
+	&__text {
+		
+	}
+
+	&:hover{
+		background-color: rgba($darkColor, 0.05);
+	}
+}

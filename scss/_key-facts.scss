@@ -1,0 +1,51 @@
+.key-facts {
+	background-color: darken($backgroundLightColor, 1%);
+
+	&__container {
+		@include adaptiveValue("padding-top", 50, 40);
+		@include adaptiveValue("padding-bottom", 30, 20);
+	}
+
+	&__body {
+		color: $darkColor
+	}
+
+	&__title {
+	}
+
+	&__facts {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		@include adaptiveValue("row-gap", 40, 20);
+	}
+
+	&__fact {
+		flex: 1 0 rem(300);
+	}
+}
+
+.fact {
+
+	@include adaptiveValue("font-size", 50, 40);
+	
+	&__icon {
+		width: em(35);
+		height: em(35);
+		background-color: darken($backgroundLightColor, 3%);
+		border-radius: 50%;
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__title {
+		margin-top: em(15);
+		text-align: center;
+		font-size: em(7);
+		line-height: 1.55;
+  }
+  .t-descr_xs {
+	}
+}

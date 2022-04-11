@@ -1,0 +1,315 @@
+// Заголовки, общие БЄМ блоки и прочее...
+.main-title{
+	display: flex;
+	justify-content: space-between;
+	gap: 15px;
+	align-items: center;
+	font-weight: 600;
+	position: relative;
+	line-height: 1.1;
+	margin-bottom: em(10);
+
+	@include adaptiveValue("font-size", 52, 30);
+	padding-top: em(7);
+
+	border-bottom: 2px rgba($secondaryColor, 0.8) solid;
+	
+	&::before{
+		order: 2;
+
+		position: relative;
+		bottom: 5px;
+		content: '†';
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-top: 10px;
+
+		border-radius: 50%;
+		flex: 0 0 em(25);
+		width: em(25);
+		height: em(25);
+
+		@include adaptiveValue("font-size", 35, 25);
+		//border: 2px solid rgba($secondaryColor, 0.3);
+
+		color: rgba($secondaryColor, 0.8);
+		background-color: $mainColor;
+	}
+}
+
+.program-title{
+	color: $darkColor;
+	@include adaptiveValue("font-size", 58, 34);
+	display: flex;
+	flex-direction: column;
+	margin-bottom: em(8);
+	&:before, &:after{
+		content: '';
+		display: block;
+		width: 100%;
+		height: em(1);
+	}
+	&:before{
+		order: 2;
+		margin-bottom: em(0.5);
+		background-color: lighten($secondaryColor, 20%);
+	}
+	&:after{
+		order: 3;
+		background-color: $secondaryColor;
+	}
+}
+//Цвета для заголовков программ
+.general-management{
+	.program-title{
+		&:before{ background-color: lighten($managementColor, 20%); }
+		&:after{ background-color: $managementColor; }
+	}
+}
+.leadership{
+	.program-title{
+		&:before{ background-color: lighten($leadershipColor, 20%); }
+		&:after{ background-color: $leadershipColor; }
+	}
+}
+.digital-business{
+	.program-title{
+		&:before{ background-color: lighten($businessColor, 20%); }
+		&:after{ background-color: $businessColor; }
+	}
+}
+.marketing{
+	.program-title{
+		&:before{ background-color: lighten($marketingColor, 20%); }
+		&:after{ background-color: $marketingColor; }
+	}
+}
+
+.button {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: em(4);
+
+	background-color: $secondaryColor;
+	border-radius: 15px;
+	box-shadow: 0px 3px 40px -10px rgba($secondaryColor, 0.5);
+
+	text-transform: uppercase;
+	font-weight: 700;
+	 
+	position: relative;
+	bottom: 0;
+	transition: bottom 0.4s ease 0s, box-shadow 0.2s ease;
+	&:hover{
+		background-color: darken($secondaryColor, 10%);			 	
+		box-shadow: 0px em(6) 0px -1px rgba(darken($secondaryColor, 20%), 1);
+		bottom: 10px;
+	}
+}
+//Цвета кнопок
+.general-management{
+	.button{
+		background-color: $managementColor;
+		box-shadow: 0px 3px 40px -10px rgba($managementColor, 0.5);
+		&:hover{
+			background-color: darken($managementColor, 10%);			 	
+			box-shadow: 0px em(6) 0px -1px rgba(darken($managementColor, 20%), 1);
+		}
+	}
+}
+.leadership{
+	.button{
+		background-color: $leadershipColor;
+		box-shadow: 0px 3px 40px -10px rgba($leadershipColor, 0.5);
+		&:hover{
+			background-color: darken($leadershipColor, 10%);			 	
+			box-shadow: 0px em(6) 0px -1px rgba(darken($leadershipColor, 20%), 1);
+		}
+	}
+}
+.digital-business{
+	.button{
+		background-color: $businessColor;
+		box-shadow: 0px 3px 40px -10px rgba($businessColor, 0.5);
+		&:hover{
+			background-color: darken($businessColor, 10%);			 	
+			box-shadow: 0px em(6) 0px -1px rgba(darken($businessColor, 20%), 1);
+		}
+	}
+}
+.marketing{
+	.button{
+		background-color: $marketingColor;
+		box-shadow: 0px 3px 40px -10px rgba($marketingColor, 0.5);
+		&:hover{
+			background-color: darken($marketingColor, 10%);			 	
+			box-shadow: 0px em(6) 0px -1px rgba(darken($marketingColor, 20%), 1);
+		}
+	}
+}
+
+.new-preview {	
+	display: block;
+
+	&__image {
+		min-height: em(180);
+	}
+
+	&__content {
+		min-height: em(160);
+		line-height: 1.35;
+		color: $darkColor;
+		padding: em(20);		
+		@include adaptiveValue("font-size", 14, 12);
+	}
+
+	&__title {
+		font-weight: 700;
+		margin-bottom: em(10);
+		font-size: rem(20);
+	}
+
+	&__parag {
+		font-weight: 400;
+	}
+
+
+	&__author {
+		margin-top: em(3);
+	}
+
+	transition: all 0.3s ease 0s;
+	@media (hover:hover) {
+		&:hover{
+			box-shadow: 0px 0px 8px 0px rgba(#000, 0.5);
+		}
+	}
+}
+
+.burger{
+	position: relative;
+	z-index: 10;
+	display: flex;
+	flex-direction: column;
+	gap: em(7);	
+
+	&::before, &::after, & span{
+		content: '';
+		display: block;
+		width: em(50);
+		height: em(1);
+		background-color: $mainColor;	
+		position: relative;
+		transition: all 0.2s ease;
+		}
+
+	&.active{
+		&::before{			
+			top: em(8);			
+			transform: rotate(45deg);
+		}
+		&::after{	
+			bottom: em(8);					
+			transform: rotate(-45deg);
+		}
+		span{
+			transform: scale(0);
+		}
+	}	
+}
+
+body.locked{  
+	overflow: hidden;
+}
+
+.darker:not(body), .brighter:not(body){		
+	&::before{
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;			
+		z-index: 1;
+	}
+}
+.darker:not(body){
+	&::before{
+		background-color: rgba($overlayColor, 0.5);
+	}
+}
+.brighter:not(body){
+	&::before{
+		background-color: rgba(#fff, 0.5);
+	}
+}
+
+body.darker, body.brighter{
+	.wrapper{
+		position: relative;
+		&::before{
+			transition: all 0.3s ease 0s;
+			z-index: 3;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(#000, 0.5);
+		}
+	}
+}
+
+.wrapper{
+	position: relative;
+	&::before{
+		content: '';
+		display: block;
+		
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: rgba(#000, 0);
+	}
+}
+
+.main-wrapper{ 
+	.exited{	color: rgba($mainColor, 0.6); } 
+}
+
+.program-wrapper{	
+	$secondaryColor: rgb(139, 0, 0);
+}
+.program-wrapper{
+	
+	.exited{	color: $secondaryColor; }
+	@media (min-width: $tablet){
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-template-rows: 1fr auto;
+		
+		.program-header-section{
+			grid-row: 1 / span 2;
+		}
+	}
+}
+
+.general-management{
+	.exited{	color: $managementColor; }
+}
+.leadership{
+	.exited{	color: $leadershipColor; }
+}
+.digital-business{
+	.exited{	color: $businessColor; }
+}
+.marketing{
+	.exited{	color: $marketingColor; }
+}
+
+
+*[hidden]{
+	display: none;
+}
+
