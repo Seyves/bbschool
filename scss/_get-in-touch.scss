@@ -81,9 +81,7 @@
 			color: $mainColor;
 			opacity: 0.5;
 		}
-
 		&:focus{
-			outline: none;
 			border: 1px solid rgba($secondaryColor, 1);
 		}
 		&:not(:placeholder-shown) {

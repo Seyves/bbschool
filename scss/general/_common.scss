@@ -222,11 +222,16 @@
 	}	
 }
 
+//========================================================================================================================================================
+.burger.hidden{
+	display: none;
+}
+
 body.locked{  
 	overflow: hidden;
 }
 
-.darker:not(body), .brighter:not(body){		
+.darken, .brighter{		
 	&::before{
 		content: '';
 		position: absolute;
@@ -235,55 +240,48 @@ body.locked{
 		top: 0;
 		left: 0;			
 		z-index: 1;
-	}
-}
-.darker:not(body){
-	&::before{
 		background-color: rgba($overlayColor, 0.5);
 	}
 }
-.brighter:not(body){
+
+.brighter{
 	&::before{
 		background-color: rgba(#fff, 0.5);
 	}
 }
 
-body.darker, body.brighter{
-	.wrapper{
-		position: relative;
-		&::before{
-			transition: all 0.3s ease 0s;
-			z-index: 3;
-			width: 100%;
-			height: 100%;
-			background-color: rgba(#000, 0.5);
+.wrapper{
+	position: relative;
+
+	&::before{	
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;	
+		z-index: 3;		
+		background-color: #000;
+		transition: opacity 0.5s;
+
+		pointer-events: none;
+
+		opacity: 0;
+	}
+
+	&.darken{
+		&::before{		
+			opacity: 0.5;
 		}
 	}
 }
 
-.wrapper{
-	position: relative;
-	&::before{
-		content: '';
-		display: block;
-		
-		position: absolute;
-		top: 0;
-		left: 0;
-		background-color: rgba(#000, 0);
-	}
-}
-
 .main-wrapper{ 
-	.exited{	color: rgba($mainColor, 0.6); } 
+	[data-anchor].active{ color: rgba($mainColor, 0.6); } 
 }
 
-.program-wrapper{	
-	$secondaryColor: rgb(139, 0, 0);
-}
 .program-wrapper{
 	
-	.exited{	color: $secondaryColor; }
 	@media (min-width: $tablet){
 		display: grid;
 		grid-template-columns: auto 1fr;
@@ -296,20 +294,14 @@ body.darker, body.brighter{
 }
 
 .general-management{
-	.exited{	color: $managementColor; }
+	[data-anchor].active{	color: $managementColor; }
 }
 .leadership{
-	.exited{	color: $leadershipColor; }
+	[data-anchor].active{	color: $leadershipColor; }
 }
 .digital-business{
-	.exited{	color: $businessColor; }
+	[data-anchor].active{	color: $businessColor; }
 }
 .marketing{
-	.exited{	color: $marketingColor; }
+	[data-anchor].active{	color: $marketingColor; }
 }
-
-
-*[hidden]{
-	display: none;
-}
-
