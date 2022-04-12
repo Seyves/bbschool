@@ -22,12 +22,17 @@
 		align-items: center;
 		justify-content: space-between;
 	}
+
+	&__burger{
+		padding: em(20) 0;
+	}
 	
 	&__logo {
 		max-height: 120px;
 		height: 100%;
 		img{			
 			height: 100%;
+			width: 100%;
 		}
 	}	
 
@@ -46,18 +51,17 @@
 		@include adaptiveValue("font-size", 16, 14);
 		
 		transition: all 0.5s ease 0s;
-		&:not(.exited){ color: $mainColor; }
+		&:not(.active){ color: $mainColor; }
 		@media (any-hover: hover){				
 			&:hover{	color: $secondaryColor;}
-		}		
-
+		}
 		font-weight: 700;
 		text-transform: uppercase;
 	}
 
 	transition: left 0.5s ease 0s;
-	@media (max-width:$mobile){
 
+	@media (max-width:$mobile){
 		background-color: rgba($backgroundDarkColor, 0.9);
 		padding: rem(40) rem(15);
 		align-items: center;
